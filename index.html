@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>U Online Café — Home</title>
+
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+/* ---------- Variables ---------- */
+:root{
+  --cream: #fbf3ea;
+  --soft-beige:#f4e7db;
+  --accent:#b86e3c;        /* darker caramel */
+  --accent-2:#e7b58a;      /* lighter */
+  --text-dark:#050505;
+  --muted:#6b6b6b;
+  --card:#fff;
+  --radius-lg:28px;
+  --shadow: 0 10px 30px rgba(30,30,30,0.08);
+}
+
+/* ---------- Reset ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  color:var(--text-dark);
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 60%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+.container{width:92%;max-width:1200px;margin:0 auto;}
+
+/* ---------- HEADER with icon-only login ---------- */
+header{
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  height:100px; /* Changed from 90px */
+  z-index:50;
+  display:flex;
+  align-items:center;
+  background:transparent;
+  padding:0 18px;
+  backdrop-filter: blur(5px);
+}
+
+.nav-inner{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px; /* Increased from 12px */
+  text-decoration:none;
+  color:var(--text-dark);
+  font-weight:800;
+  font-size:28px; /* Increased from 26px */
+}
+
+.brand img{
+  width:160px; /* Changed from 180px - narrower */
+  height:70px; /* Changed from 60px - taller */
+  border-radius:12px; /* Changed from 50% - rectangular with soft corners */
+  object-fit:contain; /* Ensures full logo is visible */
+  box-shadow:var(--shadow);
+  background-color: var(--cream);
+  padding:4px; /* Reduced from 8px - less space around logo */
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+nav a{
+  color:var(--text-dark);
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+.auth{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* Icon-only user button (replaces the boxed button) */
+.icon-only-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  font-size: 1.4rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.icon-only-btn:hover {
+  color: var(--accent);
+  background: rgba(240, 127, 52, 0.1);
+  transform: scale(1.1);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:22px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  color: var(--text-dark);
+}
+
+/* User icon styles */
+.user-icon {
+  color: var(--muted);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.user-icon:hover {
+  color: var(--accent);
+  background: rgba(184, 110, 60, 0.1);
+  transform: scale(1.1);
+}
+
+/* ---------- HERO ---------- */
+section.hero{
+  padding-top:130px; /* Increased from 120px */
+  padding-bottom:60px;
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1fr 520px;
+  gap:36px;
+  align-items:center;
+  width:100%;
+}
+
+/* hero left */
+.hero-left{
+  max-width:640px;
+}
+
+.kicker{
+  display:inline-block;
+  padding:8px 14px;
+  background:var(--soft-beige);
+  border-radius:18px;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:18px;
+  font-size:0.94rem;
+}
+
+.hero-left h1{
+  font-family:"Playfair Display", serif;
+  font-size:48px;
+  line-height:1.02;
+  margin-bottom:16px;
+  color:var(--text-dark);
+  font-weight:700;
+}
+
+.hero-left p{
+  color:var(--muted);
+  font-size:1.05rem;
+  margin-bottom:26px;
+  max-width:54ch;
+}
+
+.hero-cta{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:28px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:var(--shadow);
+  text-decoration:none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),#a95733);
+  color:#fff;
+}
+
+.btn-outline{
+  background:transparent;
+  border:2px solid rgba(184,110,60,0.18);
+  color:var(--accent);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 110, 60, 0.2);
+}
+
+/* ---------- CAROUSEL STYLES ---------- */
+.hero-art {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.food-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-slide .food-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.carousel-indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Animation for food label */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* small dots/pagination decoration */
+.dots{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+  margin-top:8px;
+}
+
+.dots span{
+  width:8px;
+  height:8px;
+  background:#f1d7c1;
+  border-radius:50%;
+  display:inline-block;
+}
+
+/* ---------- MENU SECTION ---------- */
+#menu {
+  padding: 80px 0;
+  background: var(--soft-beige);
+  border-radius: 30px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.menu-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.see-all-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.see-all-btn:hover {
+  background: rgba(184, 110, 60, 0.1);
+  transform: translateX(5px);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.menu-item p {
+  color: var(--muted);
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ---------- GALLERY ---------- */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.gallery-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--text-dark);
+}
+
+.gallery{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  min-height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.testimonials{
+  padding:36px;
+  border-radius:22px;
+  background:linear-gradient(180deg,#fff 0%, #fffbf8 100%);
+  box-shadow:var(--shadow);
+}
+
+.test-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.testimonial{
+  flex:1;
+  padding:18px;
+  border-radius:16px;
+  background:linear-gradient(180deg,#fff,#fff);
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+
+.testimonial p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.testimonial small{
+  display:block;
+  margin-top:10px;
+  color:var(--accent);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  margin-top:60px;
+  padding:48px 0;
+  background:transparent;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+footer h4{
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+footer p, footer a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.95rem;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* FOOTER LOGO - MATCHING HEADER LOGO */
+footer img{
+  width:160px; /* Match header logo width */
+  height:70px; /* Match header logo height */
+  border-radius:12px; /* Match header logo corners */
+  object-fit:contain; /* Ensures full logo is visible */
+  box-shadow:var(--shadow);
+  display:block;
+  margin-bottom:12px;
+  background-color: var(--cream);
+  padding:4px; /* Match header logo padding */
+}
+
+.newsletter input{
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #eee;
+  width:100%;
+  margin-bottom:10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.newsletter button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.footer-bottom{
+  text-align:center;
+  color:var(--muted);
+  margin-top:18px;
+  font-size:0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:1fr 420px}
+  .hero-left h1{font-size:40px}
+  .footer-grid{grid-template-columns:repeat(2,1fr); gap:30px;}
+}
+
+@media (max-width:860px){
+  nav ul{display:none}
+  .menu-toggle{display:block}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{margin-top:18px}
+  .food-carousel{max-width: 86%; margin:0 auto}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .brand img {
+    width: 140px; /* Slightly smaller on tablets */
+    height: 65px;
+  }
+  footer img {
+    width: 140px; /* Match header adjustment */
+    height: 65px;
+  }
+}
+
+@media (max-width:520px){
+  .hero-left h1{font-size:28px}
+  .gallery{grid-template-columns:1fr}
+  .food-carousel{max-width: 92%}
+  .footer-grid{grid-template-columns:1fr; gap:30px;}
+  .menu-grid { grid-template-columns: 1fr; }
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .food-carousel {
+    height: 350px;
+  }
+  .brand img {
+    width: 120px; /* Smaller on mobile */
+    height: 55px;
+  }
+  footer img {
+    width: 120px; /* Match header adjustment */
+    height: 55px;
+  }
+  header {
+    height: 90px; /* Slightly smaller header on mobile */
+  }
+  section.hero {
+    padding-top: 110px; /* Adjusted for smaller header on mobile */
+  }
+}
+
+/* small helpers */
+.muted{color:var(--muted)}
+.center{text-align:center}
+</style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="mainHeader">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <img src="u cafe 1 logo.png" alt="U Café logo">
+        <span>U Café</span>
+      </a>
+
+      <nav>
+        <ul id="navList">
+          <li><a href="#">Home</a></li>
+          <li><a href="about1.html">About</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="auth">
+        <a href="loginu.html" class="user-icon" id="loginBtn" title="Log in">
+          <i class="fas fa-user"></i>
+        </a>
+        <button class="menu-toggle" id="menuBtn" aria-label="menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <!-- LEFT: text -->
+        <div class="hero-left">
+          <div class="kicker">Welcome</div>
+          <h1>Welcome to U online<br/>Cafés Service</h1>
+          <p>Freshly brewed coffee, handcrafted pastries and cozy vibes — order online and enjoy premium taste at home or reserve a table for a special moment.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="menu.html"><i class="fas fa-shopping-bag"></i> Order now & enjoy</a>
+            <a class="btn btn-outline" href="contact.html"><i class="fas fa-calendar-alt"></i> Book a table</a>
+          </div>
+
+          <!-- small pagination dots like sample -->
+          <div style="margin-top:18px;">
+            <div class="muted" style="font-size:0.92rem;">Popular: Cappuccino · Donut · Croissant</div>
+          </div>
+        </div>
+
+       <!-- RIGHT: Food/Cafe images gallery -->
+<div class="hero-art" aria-hidden="true">
+  <div class="food-carousel">
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+      <!-- Slides will be dynamically added here by JavaScript -->
+      <div class="carousel-slide active">
+        <img src="Caramel Macchiato1.png" alt="Specialty Coffee">
+        <div class="food-label">Specialty Coffee</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Butter Croissant.png" alt="Fresh Pastries">
+        <div class="food-label">Fresh Pastries</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="ጮርናቄ አሰራርፖስቲ አሰራር Pasti 1.PNG" alt="School Favorites">
+        <div class="food-label">School Favorites</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Moya1.PNG" alt="School Favorites">
+        <div class="food-label">School Favorites</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Fresh Orange Juice1.PNG" alt="Artisan Coffee">
+        <div class="food-label">Juices</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Chicken Tibs1.PNG" alt="Homemade Pastries">
+        <div class="food-label">Tibs Variety</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Chai Latte1.PNG" alt="Homemade Pastries">
+        <div class="food-label">Tea</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Vegetarian Combo1.PNG" alt="Homemade Pastries">
+        <div class="food-label">Injera Specials</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Doro Wat1.PNG" alt="Homemade Pastries">
+        <div class="food-label">Traditional Menu</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="Buna with Popcorn1.PNG" alt="Homemade Pastries">
+        <div class="food-label">Ethiopian Coffee</div>
+      </div>
+      
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button class="carousel-btn prev-btn" aria-label="Previous image">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="carousel-btn next-btn" aria-label="Next image">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <!-- Indicators/Dots -->
+    <div class="carousel-indicators">
+      <!-- Dots will be added by JavaScript -->
+    </div>
+  </div>
+</div>
+    </section>
+
+         <!-- MENU SECTION -->
+    <section id="menu" class="container">
+      <div class="menu-header" style="text-align: center; margin-bottom: 40px;">
+        <h2>Our Special Menu</h2>
+        <p class="muted" style="max-width: 600px; margin: 0 auto; margin-top: 10px;">Discover our handcrafted coffee and delicious pastries</p>
+      </div>
+      
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h3>Artisan Coffee</h3>
+          <p>Freshly brewed from premium beans with notes of caramel and chocolate</p>
+          <div class="price">$4.50</div>
+        </div>
+        
+        <div class="menu-item">
+          <h3>Homemade Pastries</h3>
+          <p>Freshly baked croissants, muffins, and cookies daily</p>
+          <div class="price">$3.75</div>
+        </div>
+        
+        <div class="menu-item">
+          <h3>Specialty Drinks</h3>
+          <p>Unique blends including matcha latte, chai, and seasonal specials</p>
+          <div class="price">$5.25</div>
+        </div>
+      </div>
+      
+      <!-- Button in bottom right -->
+      <div style="display: flex; justify-content: flex-end; margin-top: 30px;">
+        <button class="see-all-btn">See all items →</button>
+      </div>
+    </section>
+
+   <!-- GALLERY SECTION -->
+<section id="gallery" class="container" style="margin-top: 80px; padding: 80px 0; background: var(--soft-beige); border-radius: 30px;">
+  <div class="menu-header" style="text-align: center; margin-bottom: 40px;">
+    <h3>Our Menu Highlights</h3>
+    <p class="muted" style="max-width: 600px; margin: 0 auto; margin-top: 10px;">Discover our popular coffee and pastry combinations</p>
+  </div>
+
+  <div class="gallery" aria-hidden="false">
+    <div class="card"><img src="coffee.jpg" alt="Coffee"></div>
+    <div class="card"><img src="pastry.jpg" alt="Pastry"></div>
+    <div class="card"><img src="cafe.jpg" alt="Cafe Atmosphere"></div>
+  </div>
+  
+  <!-- Button in bottom right -->
+  <div style="display: flex; justify-content: flex-end; margin-top: 30px;">
+    <button class="see-all-btn">See all items →</button>
+  </div>
+</section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="container" style="margin-top: 80px; padding: 80px 0;">
+      <div class="testimonials">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px;margin-right:12px">
+            <div style="font-family:Playfair Display,serif;font-size:20px;margin-bottom:8px">What people say</div>
+            <div class="muted">Trusted by our customers — cozy, tasty and warm service.</div>
+          </div>
+          <div style="flex:2;min-width:260px">
+            <div style="display:flex;gap:12px;overflow:hidden">
+              <div class="testimonial">
+                <p>"Best coffee in town — rich, aromatic and smooth. The pastries are made with care!"</p>
+                <small>— Hana K.</small>
+              </div>
+              <div class="testimonial">
+                <p>"Lovely place and great delivery. Always fresh and tastes homemade."</p>
+                <small>— Samuel B.</small>
+              </div>
+              <div class="testimonial">
+                <p>"The booking was easy, and the staff were very friendly. Highly recommended."</p>
+                <small>— L. Getachew</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container" style="margin-top:34px">
+      <div class="footer-grid">
+        <div>
+          <img src="u cafe 1 logo.png" alt="U Café logo">
+          <h4>U Café</h4>
+          <p>Premium coffee and handcrafted pastries. Cozy atmosphere and friendly staff.</p>
+          <div style="margin-top: 12px">
+                        <a class="muted" href="https://facebook.com" target="_blank"><i class="fab fa-facebook" style="margin-right: 8px"></i></a>
+                        <a class="muted" href="https://instagram.com" target="_blank"><i class="fab fa-instagram" style="margin-right: 8px"></i></a>
+                        <a class="muted" href="https://twitter.com" target="_blank"><i class="fab fa-twitter" style="margin-right: 8px"></i></a>
+                        <a class="muted" href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok" style="margin-right: 8px"></i></a>
+                        <a class="muted" href="https://youtube.com" target="_blank"><i class="fab fa-youtube" style="margin-right: 8px"></i></a>
+                    </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="about1.html">About</a></p>
+          <p><a href="menu.html">Menu</a></p>
+          <p><a href="testimonials.html">Testimonials</a></p>
+          <p><a href="#gallery">Gallery</a></p>
+          <p><a href="contact.html">Contact</a></p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <p>Seasonal specials</p>
+          <p>Pastries</p>
+          <p>Coffee</p>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <div class="newsletter">
+            <input type="email" id="newsletterEmail" placeholder="Your email" />
+            <button class="btn btn-primary" id="subscribeBtn" style="width:100%;margin-top:8px">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="margin-top:28px;text-align:center;">
+        <div class="muted">© <span id="year"></span> U Café • Designed to match your sample</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ---------- SCRIPTS ---------- -->
+<script>
+  // set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Header is completely transparent like index11.html - no scroll effect
+const header = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => {
+  header.style.background = 'transparent';
+  header.style.backdropFilter = window.scrollY > 50 ? 'blur(5px)' : 'blur(5px)';
+});
+
+// Login button functionality - REMOVED alert, now links to loginu.html
+// The link already points to loginu.html, so no JavaScript needed for redirection
+
+// Subscribe button functionality
+const subscribeBtn = document.getElementById('subscribeBtn');
+const newsletterEmail = document.getElementById('newsletterEmail');
+
+subscribeBtn.addEventListener('click', () => {
+  if (newsletterEmail.value && newsletterEmail.value.includes('@')) {
+    alert('Thank you for subscribing to our newsletter!');
+    newsletterEmail.value = '';
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
+
+// "See all items" button functionality
+const seeAllBtn = document.querySelector('.see-all-btn');
+seeAllBtn.addEventListener('click', () => {
+  alert('This would show all menu items. In a real site, this would expand the menu section or open a menu page.');
+});
+
+// Image Carousel Functionality
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const indicatorsContainer = document.querySelector('.carousel-indicators');
+let currentSlide = 0;
+let slideInterval;
+
+// Create indicators/dots
+carouselSlides.forEach((_, index) => {
+  const indicator = document.createElement('button');
+  indicator.className = 'carousel-indicator';
+  indicator.setAttribute('aria-label', `Go to slide ${index + 1}`);
+  if (index === 0) indicator.classList.add('active');
+  
+  indicator.addEventListener('click', () => {
+    goToSlide(index);
+    resetInterval();
+  });
+  
+  indicatorsContainer.appendChild(indicator);
+});
+
+const indicators = document.querySelectorAll('.carousel-indicator');
+
+// Function to show a specific slide
+function showSlide(index) {
+  // Hide all slides
+  carouselSlides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+  
+  // Remove active class from all indicators
+  indicators.forEach(indicator => {
+    indicator.classList.remove('active');
+  });
+  
+  // Show the current slide and indicator
+  carouselSlides[index].classList.add('active');
+  indicators[index].classList.add('active');
+  currentSlide = index;
+}
+
+// Function to go to next slide
+function nextSlide() {
+  let nextIndex = currentSlide + 1;
+  if (nextIndex >= carouselSlides.length) {
+    nextIndex = 0;
+  }
+  showSlide(nextIndex);
+}
+
+// Function to go to previous slide
+function prevSlide() {
+  let prevIndex = currentSlide - 1;
+  if (prevIndex < 0) {
+    prevIndex = carouselSlides.length - 1;
+  }
+  showSlide(prevIndex);
+}
+
+// Function to go to specific slide
+function goToSlide(index) {
+  if (index >= 0 && index < carouselSlides.length) {
+    showSlide(index);
+  }
+}
+
+// Function to start automatic slide change
+function startCarousel() {
+  slideInterval = setInterval(nextSlide, 1500); // Change slide every 4 seconds
+}
+
+// Function to reset interval (when user interacts with carousel)
+function resetInterval() {
+  clearInterval(slideInterval);
+  startCarousel();
+}
+
+// Event listeners for buttons
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetInterval();
+  });
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+}
+
+// Pause carousel on hover
+const carousel = document.querySelector('.food-carousel');
+if (carousel) {
+  carousel.addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+  });
+  
+  carousel.addEventListener('mouseleave', () => {
+    startCarousel();
+  });
+}
+
+// Initialize carousel
+showSlide(0);
+startCarousel();
+
+// Preload carousel images
+const carouselImages = [
+  'Caramel Macchiato1.png',
+  'Butter Croissant.png',
+  'ጮርናቄ አሰራርፖስቲ አሰራር Pasti 1.PNG',
+  'coffee.jpg',
+  'pastry.jpg'
+];
+carouselImages.forEach(img => {
+  const image = new Image();
+  image.src = img;
+});
+
+// mobile menu toggle
+const menuBtn = document.getElementById('menuBtn');
+const navList = document.getElementById('navList');
+menuBtn && menuBtn.addEventListener('click', () => {
+  if(!navList) return;
+  if (navList.style.display === 'flex') {
+    navList.style.display = '';
+  } else {
+    navList.style.display = 'flex';
+    navList.style.flexDirection = 'column';
+    navList.style.position = 'absolute';
+    navList.style.right = '18px';
+    navList.style.top = '72px';
+    navList.style.background = 'rgba(255, 255, 255, 0.95)';
+    navList.style.backdropFilter = 'blur(10px)';
+    navList.style.padding = '16px';
+    navList.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)';
+    navList.style.borderRadius = '16px';
+    navList.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+    navList.style.zIndex = '100';
+    navList.style.gap = '15px';
+  }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (navList && navList.style.display === 'flex' && 
+      !e.target.closest('#navList') && 
+      !e.target.closest('#menuBtn')) {
+    navList.style.display = '';
+  }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    
+    // Skip for # (home) links
+    if (targetId === '#' || targetId.startsWith('http')) return;
+    
+    if (targetId.startsWith('#')) {
+      e.preventDefault();
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        if (navList && navList.style.display === 'flex') {
+          navList.style.display = '';
+        }
+      }
+    }
+  });
+});
+  </script>
+</body>
+</html>
