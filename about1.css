@@ -1,0 +1,802 @@
+/* Color Variables - Matching index16.html */
+:root {
+    --cream: #fbf3ea;
+    --soft-beige: #f4e7db;
+    --accent: #b86e3c;        /* darker caramel */
+    --accent-2: #e7b58a;      /* lighter */
+    --text-dark: #050505;
+    --muted: #6b6b6b;
+    --card: #fff;
+    --radius-lg: 28px;
+    --shadow: 0 10px 30px rgba(30, 30, 30, 0.08);
+    --primary: #b86e3c;        /* Using accent as primary */
+    --secondary: #e7b58a;      /* Using accent-2 as secondary */
+    --third: #a95733;          /* Darker shade for third */
+    --fourth: #f4e7db;         /* Using soft-beige as fourth */
+    --bg-color: #fbf3ea;       /* Using cream as background */
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+    background: linear-gradient(180deg, var(--cream) 0%, #fff 60%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Updated Header - Matching index16.html */
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    padding: 0 18px;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.logo i {
+    font-size: 32px;
+    color: var(--accent);
+}
+
+/* Logo image styling to match index16.html */
+.logo-img {
+    width: 160px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: var(--shadow);
+    background-color: var(--cream);
+    padding: 4px;
+}
+
+/* Navigation matching index16.html */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+nav ul li a.active {
+    color: var(--accent);
+}
+
+/* User icon - matching index16.html */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-icon {
+    color: var(--muted);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.user-icon:hover {
+    color: var(--accent);
+    background: rgba(184, 110, 60, 0.1);
+    transform: scale(1.1);
+}
+
+/* Language Switcher - updated to match design */
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+    background: rgba(184, 110, 60, 0.1);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    min-width: 120px;
+    display: none;
+    z-index: 1000;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-option {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.language-option:hover {
+    background: var(--soft-beige);
+    color: var(--accent);
+}
+
+/* ========== MAIN CONTENT STYLES ========== */
+/* Mission Header Section */
+.mission-header {
+    position: relative;
+    height: 500px;
+    background-image: url(u\ cafe\ 5.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mission-content {
+    max-width: 800px;
+    padding: 40px;
+    background-color: rgba(58, 47, 40, 0.85);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.mission-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.mission-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.mission-divider {
+    width: 100px;
+    height: 3px;
+    background: var(--primary);
+    margin: 20px auto;
+    border: none;
+}
+
+/* Page Specific Styles */
+.page-section {
+    margin-bottom: 80px;
+    overflow: visible;
+}
+
+.two-column-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.two-column-section .text-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    overflow: visible;
+}
+
+.two-column-section .text-content p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Shared Title Style */
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    overflow: visible;
+}
+
+.title-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 0 auto 50px;
+    border: none;
+}
+
+/* Frame effect for images */
+.image-collage img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1),
+                0 0 0 8px var(--secondary),
+                0 0 0 10px rgba(184, 110, 60, 0.2);
+    transition: all 0.3s ease;
+}
+
+.image-collage img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15),
+                0 0 0 8px var(--secondary),
+                0 0 0 10px var(--primary);
+}
+
+/* Custom sizes for challenge and solution images */
+#challenge .image-collage img,
+#solution .image-collage img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Image collage style */
+.image-collage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+}
+
+.image-collage img {
+    width: 100%;
+    max-height: 350px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* First section - 2 images in left column */
+#challenge .image-collage {
+    grid-template-columns: 1fr;
+}
+
+#challenge .image-collage img {
+    max-height: 350px;
+    height: auto;
+}
+
+/* Second section - 2 images in right column */
+#solution .image-collage {
+    grid-template-columns: 1fr;
+}
+
+#solution .image-collage img {
+    max-height: 350px;
+    height: auto;
+}
+
+#solution .text-content {
+    order: 2;
+}
+
+#solution .image-content {
+    order: 1;
+}
+
+/* ========== ORIGINAL FOUNDERS SECTION STYLES ========== */
+/* Founders Section - Keeping original structure with new colors */
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+/* Enhanced founder card with multiple animations - Original design with new colors */
+.founder-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center bottom;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 230px;
+    height: 180px;
+}
+
+/* Glow effect on hover - Updated colors */
+.founder-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--third), var(--primary));
+    z-index: 2;
+    transform: translateY(-5px);
+    transition: transform 0.5s ease;
+}
+
+.founder-card:hover::before {
+    transform: translateY(0);
+}
+
+/* Main hover effect */
+.founder-card:hover {
+    transform: translateY(-20px) scale(1.2);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2), 0 0 30px rgba(184, 110, 60, 0.4);
+    z-index: 10;
+}
+
+/* Icon styling with animation */
+.founder-card .icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+    position: relative;
+}
+
+.founder-card:hover .icon {
+    transform: scale(1.4) rotate(5deg);
+    color: var(--third);
+    text-shadow: 0 0 15px rgba(169, 87, 51, 0.6);
+}
+
+/* Custom image icon styling */
+.founder-card .icon-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.founder-card:hover .icon-img {
+    transform: scale(1.4) rotate(5deg);
+    filter: drop-shadow(0 0 8px rgba(169, 87, 51, 0.6));
+}
+
+/* Name styling with animation */
+.founder-card .name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.founder-card:hover .name {
+    transform: translateY(-5px);
+    color: var(--third);
+    text-shadow: 0 0 5px rgba(169, 87, 51, 0.3);
+}
+
+/* Underline animation for name */
+.founder-card .name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--third);
+    transition: width 0.4s ease;
+}
+
+.founder-card:hover .name::after {
+    width: 100%;
+}
+
+/* Subtle background pattern on hover */
+.founder-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(231, 181, 138, 0.2) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.founder-card:hover::after {
+    opacity: 1;
+}
+
+.founder-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+    overflow: hidden;
+}
+
+.founder-card .role {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.9rem;
+    color: var(--third);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+    opacity: 0;
+    font-weight: 500;
+    z-index: 5;
+}
+
+.founder-card:hover .role {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Adjust name margin for better spacing */
+.founder-card .name {
+    margin-bottom: 0;
+    transition: all 0.4s ease;
+}
+
+.founder-card:hover .name {
+    transform: translateY(-5px);
+}
+
+/* ========== FOOTER STYLES ========== */
+/* Footer - Matching index16.html */
+footer {
+    margin-top: 60px;
+    padding: 48px 0;
+    background: transparent;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    padding: 0 10px;
+}
+
+.footer-column h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+.footer-column p, .footer-column a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(184, 110, 60, 0.1);
+    border-radius: 50%;
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+.btn-subscribe {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 28px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, var(--accent), #a95733);
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-subscribe:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(184, 110, 60, 0.2);
+}
+
+.copyright {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 18px;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 1100px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .two-column-section {
+        grid-template-columns: 1fr;
+    }
+    
+    #solution .text-content,
+    #solution .image-content {
+        order: 0;
+    }
+    
+    .mission-header {
+        height: 400px;
+    }
+    
+    .mission-title {
+        font-size: 2.2rem;
+    }
+    
+    .mission-text {
+        font-size: 1.1rem;
+    }
+    
+    .founder-card:hover {
+        transform: translateY(-15px) scale(1.15);
+    }
+    
+    /* Adjust image sizes for tablet */
+    .image-collage img {
+        max-height: 300px;
+    }
+    
+    #challenge .image-collage img,
+    #solution .image-collage img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 860px) {
+    nav ul {
+        display: none;
+    }
+    
+    .mission-header {
+        height: 350px;
+    }
+    
+    .mission-content {
+        padding: 20px;
+    }
+    
+    .mission-title {
+        font-size: 1.8rem;
+    }
+    
+    .mission-text {
+        font-size: 1rem;
+    }
+    
+    .founders-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+    }
+    
+    /* Adjust image sizes for mobile */
+    .image-collage img {
+        max-height: 250px;
+    }
+    
+    #challenge .image-collage img,
+    #solution .image-collage img {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-column {
+        padding: 0;
+    }
+    
+    footer h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .mission-header {
+        height: 300px;
+    }
+    
+    .mission-title {
+        font-size: 1.6rem;
+    }
+    
+    .mission-text {
+        font-size: 0.9rem;
+    }
+    
+    .founders-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .founder-card:hover {
+        transform: translateY(-10px) scale(1.1);
+    }
+    
+    /* Adjust image sizes for small mobile */
+    .image-collage img {
+        max-height: 200px;
+    }
+    
+    #challenge .image-collage img,
+    #solution .image-collage img {
+        max-height: 200px;
+    }
+    
+    header {
+        height: 90px;
+    }
+    
+    main {
+        padding-top: 110px;
+    }
+}
